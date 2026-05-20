@@ -108,7 +108,25 @@ def collect_all() -> list:
                 print(f"  ✓ [{category}] {item_name}: {len(data.get('Items') or [])}건")
                 time.sleep(1.0)
             except Exception as e:
-                print(f"  ✗ [{category}] {item_name}: 오류 — {e}")
+                if "429" in str(e):
+                    print("  X [429] 호출 제한, 60초 대기 후 재시도...")
+                    time.sleep(60)
+                    try:
+                        data = fetch_auction(cat_code, item_name)
+                        for record in (data.get("Items") or []):
+                            results.append({
+                                "collected_at": collected_at,
+                                "category":     category,
+                                "item_name":    item_name,
+                                "grade":        record.get("Grade", ""),
+                                "price":        record.get("CurrentMinPrice", 0),
+                                "quantity":     record.get("Quantity", 0),
+                                "end_date":     record.get("EndDate", ""),
+                            })
+                    except Exception as e2:
+                        print("  X [ERR] [{}] {}: {}".format(category, item_name, e2))
+                else:
+                    print("  X [ERR] [{}] {}: {}".format(category, item_name, e))
 
     return results
 
