@@ -1,0 +1,875 @@
+[
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "들꽃",
+    "grade": "일반",
+    "price": 115,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "들꽃",
+    "grade": "고급",
+    "price": 340,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "들꽃",
+    "grade": "희귀",
+    "price": 1215,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "들꽃",
+    "grade": "희귀",
+    "price": 1435,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "수줍은 들꽃",
+    "grade": "고급",
+    "price": 340,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "아비도스 들꽃",
+    "grade": "희귀",
+    "price": 1215,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "식물채집",
+    "item_name": "화사한 들꽃",
+    "grade": "희귀",
+    "price": 1435,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "목재",
+    "grade": "일반",
+    "price": 110,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "목재",
+    "grade": "고급",
+    "price": 219,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "목재",
+    "grade": "희귀",
+    "price": 1102,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "목재",
+    "grade": "희귀",
+    "price": 1397,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "부드러운 목재",
+    "grade": "고급",
+    "price": 219,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "튼튼한 목재",
+    "grade": "희귀",
+    "price": 1102,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "벌목",
+    "item_name": "아비도스 목재",
+    "grade": "희귀",
+    "price": 1397,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "철광석",
+    "grade": "일반",
+    "price": 119,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "철광석",
+    "grade": "고급",
+    "price": 236,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "철광석",
+    "grade": "희귀",
+    "price": 1410,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "철광석",
+    "grade": "희귀",
+    "price": 1441,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "묵직한 철광석",
+    "grade": "고급",
+    "price": 236,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "단단한 철광석",
+    "grade": "희귀",
+    "price": 1410,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "채광",
+    "item_name": "아비도스 철광석",
+    "grade": "희귀",
+    "price": 1441,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "진귀한 가죽",
+    "grade": "희귀",
+    "price": 11,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "두툼한 생고기",
+    "grade": "일반",
+    "price": 152,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "두툼한 생고기",
+    "grade": "희귀",
+    "price": 1982,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "두툼한 생고기",
+    "grade": "희귀",
+    "price": 2008,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "수렵의 결정",
+    "grade": "영웅",
+    "price": 190,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "다듬은 생고기",
+    "grade": "고급",
+    "price": 305,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "아비도스 두툼한 생고기",
+    "grade": "희귀",
+    "price": 1982,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "수렵",
+    "item_name": "오레하 두툼한 생고기",
+    "grade": "희귀",
+    "price": 2008,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "낚시의 결정",
+    "grade": "영웅",
+    "price": 128,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "생선",
+    "grade": "일반",
+    "price": 130,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "생선",
+    "grade": "고급",
+    "price": 256,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "붉은 살 생선",
+    "grade": "고급",
+    "price": 256,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "오레하 태양 잉어",
+    "grade": "희귀",
+    "price": 800,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "낚시",
+    "item_name": "아비도스 태양 잉어",
+    "grade": "희귀",
+    "price": 1714,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "진귀한 유물",
+    "grade": "희귀",
+    "price": 7,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "고대 유물",
+    "grade": "일반",
+    "price": 110,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "희귀한 유물",
+    "grade": "고급",
+    "price": 218,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "고고학의 결정",
+    "grade": "영웅",
+    "price": 381,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "오레하 유물",
+    "grade": "희귀",
+    "price": 1016,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "고고학",
+    "item_name": "아비도스 유물",
+    "grade": "희귀",
+    "price": 1388,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석 조각",
+    "grade": "일반",
+    "price": 1,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석 결정",
+    "grade": "일반",
+    "price": 1,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석 결정",
+    "grade": "일반",
+    "price": 34,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호강석",
+    "grade": "일반",
+    "price": 1,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호강석",
+    "grade": "일반",
+    "price": 3,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석 조각",
+    "grade": "일반",
+    "price": 2,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석 결정",
+    "grade": "일반",
+    "price": 2,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석 결정",
+    "grade": "일반",
+    "price": 1499,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "정제된 수호강석",
+    "grade": "일반",
+    "price": 3,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "조화의 돌파석",
+    "grade": "희귀",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "위대한 명예의 돌파석",
+    "grade": "희귀",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 수호석",
+    "grade": "일반",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 수호석",
+    "grade": "일반",
+    "price": 34,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 돌파석",
+    "grade": "희귀",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 돌파석",
+    "grade": "희귀",
+    "price": 15,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴강석",
+    "grade": "일반",
+    "price": 10,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴강석",
+    "grade": "일반",
+    "price": 60,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "위대한 운명의 돌파석",
+    "grade": "희귀",
+    "price": 15,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "상급 오레하 융화 재료",
+    "grade": "영웅",
+    "price": 14,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "상급 오레하 융화 재료",
+    "grade": "영웅",
+    "price": 69,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석",
+    "grade": "일반",
+    "price": 2,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석",
+    "grade": "일반",
+    "price": 2,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석",
+    "grade": "일반",
+    "price": 19,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석",
+    "grade": "일반",
+    "price": 275,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "파괴석",
+    "grade": "일반",
+    "price": 1499,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "명예의 돌파석",
+    "grade": "희귀",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "명예의 돌파석",
+    "grade": "희귀",
+    "price": 23,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "명예의 돌파석",
+    "grade": "희귀",
+    "price": 25,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "명예의 돌파석",
+    "grade": "희귀",
+    "price": 179,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "경이로운 명예의 돌파석",
+    "grade": "희귀",
+    "price": 25,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "생명의 돌파석",
+    "grade": "희귀",
+    "price": 30,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 수호석 결정",
+    "grade": "일반",
+    "price": 34,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "오레하 융화 재료",
+    "grade": "영웅",
+    "price": 14,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "오레하 융화 재료",
+    "grade": "희귀",
+    "price": 38,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "오레하 융화 재료",
+    "grade": "영웅",
+    "price": 69,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석",
+    "grade": "일반",
+    "price": 1,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석",
+    "grade": "일반",
+    "price": 1,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석",
+    "grade": "일반",
+    "price": 4,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석",
+    "grade": "일반",
+    "price": 34,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "수호석",
+    "grade": "일반",
+    "price": 39,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "정제된 파괴강석",
+    "grade": "일반",
+    "price": 60,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "최상급 오레하 융화 재료",
+    "grade": "영웅",
+    "price": 69,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "아비도스 융화 재료",
+    "grade": "희귀",
+    "price": 101,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "아비도스 융화 재료",
+    "grade": "영웅",
+    "price": 133,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "상급 아비도스 융화 재료",
+    "grade": "영웅",
+    "price": 133,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "찬란한 명예의 돌파석",
+    "grade": "희귀",
+    "price": 179,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 파괴석",
+    "grade": "일반",
+    "price": 275,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 파괴석",
+    "grade": "일반",
+    "price": 1499,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련재료",
+    "item_name": "운명의 파괴석 결정",
+    "grade": "일반",
+    "price": 1499,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "별의 숨결",
+    "grade": "영웅",
+    "price": 5,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "태양의 은총",
+    "grade": "고급",
+    "price": 19,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "태양의 축복",
+    "grade": "희귀",
+    "price": 27,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "태양의 가호",
+    "grade": "영웅",
+    "price": 67,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "달의 숨결",
+    "grade": "영웅",
+    "price": 188,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "빙하의 숨결",
+    "grade": "영웅",
+    "price": 244,
+    "quantity": 0,
+    "end_date": ""
+  },
+  {
+    "collected_at": "2026-05-19T15:37:56",
+    "category": "재련추가",
+    "item_name": "용암의 숨결",
+    "grade": "영웅",
+    "price": 347,
+    "quantity": 0,
+    "end_date": ""
+  }
+]
