@@ -106,7 +106,7 @@ def collect_all() -> list:
                         "end_date": record.get("EndDate", ""),
                     })
                 print(f"  ✓ [{category}] {item_name}: {len(data.get('Items') or [])}건")
-                time.sleep(0.3)
+                time.sleep(1.0)
             except Exception as e:
                 print(f"  ✗ [{category}] {item_name}: 오류 — {e}")
 
