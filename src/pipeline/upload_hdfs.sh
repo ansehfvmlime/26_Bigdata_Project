@@ -4,7 +4,7 @@
 
 DATE=${1:-$(date +%Y-%m-%d)}
 LOCAL_DIR="data/raw/${DATE}"
-HDFS_DIR="/data/auction/raw/${DATE}"
+HDFS_DIR="/user/maria_dev/auction/raw/${DATE}"
 
 if [ ! -d "$LOCAL_DIR" ]; then
     echo "[ERROR] 로컬 디렉토리 없음: $LOCAL_DIR"
