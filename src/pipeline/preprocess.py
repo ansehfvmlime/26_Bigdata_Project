@@ -53,10 +53,11 @@ df_cost = df_recipe.join(df_material, on="material_name", how="inner") \
     .withColumn("material_cost", F.col("material_price") * F.col("quantity"))
 
 # 오레하 제작 원가 합산 (재료비 합계 + 수수료)
-df_craft_cost = df_cost.groupBy("result_item", "collected_at") \
+df_craft_cost = df_cost.groupBy("result_item", "collected_at", "craft_fee") \
     .agg(
-        (F.sum("material_cost") + F.first("craft_fee")).alias("craft_cost")
-    )
+        F.sum("material_cost").alias("total_material_cost")
+    ) \
+    .withColumn("craft_cost", F.col("total_material_cost") + F.col("craft_fee"))
 
 # 오레하 경매장가 추출
 df_oreha = df_clean.filter(
@@ -65,7 +66,7 @@ df_oreha = df_clean.filter(
         "오레하 융화 재료", "상급 오레하 융화 재료", "최상급 오레하 융화 재료",
         "아비도스 융화 재료", "상급 아비도스 융화 재료"
     ]))) \
-    .select("collected_at", "item_name", "price") \
+    .select("collected_at", "item_name", "price", "day_of_week") \
     .withColumnRenamed("item_name", "result_item") \
     .withColumnRenamed("price", "market_price")
 
