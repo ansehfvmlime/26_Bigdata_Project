@@ -42,25 +42,32 @@ df_recipe = spark.read \
     .option("inferSchema", "true") \
     .csv(HDFS_RECIPE)
 
-# 재료별 가격 추출 (생활재료만)
+from pyspark.sql.window import Window
+
+# 재료별 수집 시점 가격 추출 (생활재료)
 df_material = df_clean.filter(F.col("category").isin(
     ["식물채집", "벌목", "채광", "수렵", "낚시", "고고학"])) \
-    .select("item_name", "price") \
+    .select("collected_at", "day_of_week", "item_name", "price") \
     .withColumnRenamed("item_name", "material_name") \
     .withColumnRenamed("price", "material_price")
 
-# 재료별 평균 가격으로 원가 계산
-df_material_avg = df_material.groupBy("material_name") \
-    .agg(F.avg("material_price").alias("material_price"))
-
-df_cost = df_recipe.join(df_material_avg, on="material_name", how="inner") \
+# 레시피 JOIN → 수집 시점 × route별 원가 계산
+df_cost = df_recipe.join(df_material, on="material_name", how="inner") \
     .withColumn("material_cost", F.col("material_price") * F.col("quantity"))
 
-df_craft_cost = df_cost.groupBy("result_item", "craft_fee") \
-    .agg(
-        F.sum("material_cost").alias("total_material_cost")
-    ) \
-    .withColumn("craft_cost", F.col("total_material_cost") + F.col("craft_fee"))
+# route별 원가 합산 (수집 시점 기준)
+df_route_cost = df_cost.groupBy("result_item", "collected_at", "day_of_week", "craft_fee", "route") \
+    .agg(F.sum("material_cost").alias("route_material_cost")) \
+    .withColumn("route_craft_cost", F.col("route_material_cost") + F.col("craft_fee"))
+
+# 수집 시점별 최저 원가 route 선택
+window = Window.partitionBy("result_item", "collected_at")
+df_craft_cost = df_route_cost \
+    .withColumn("min_craft_cost", F.min("route_craft_cost").over(window)) \
+    .filter(F.col("route_craft_cost") == F.col("min_craft_cost")) \
+    .select("result_item", "collected_at", "day_of_week",
+            F.col("route_craft_cost").alias("craft_cost"), "route") \
+    .dropDuplicates(["result_item", "collected_at"])
 
 # 오레하 경매장가 추출
 df_oreha = df_clean.filter(
@@ -73,10 +80,9 @@ df_oreha = df_clean.filter(
     .withColumnRenamed("item_name", "result_item") \
     .withColumnRenamed("price", "market_price")
 
-# 원가 vs 경매장가 비교 → profit 컬럼 생성
-df_profit = df_oreha.join(df_craft_cost, on="result_item", how="inner") \
-    .withColumn("profit", F.col("market_price") - F.col("craft_cost")) \
-    .withColumn("is_profitable", F.col("profit") > 0)
+df_profit = df_oreha.join(
+    df_craft_cost.select("result_item", "collected_at", "craft_cost", "route"),
+    on=["result_item", "collected_at"], how="inner") \
 
 # ── 4. Parquet 저장 ───────────────────────────────────────────────────────────
 print("[4/4] Parquet 저장...")
