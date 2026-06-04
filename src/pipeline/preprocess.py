@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Spark 전처리 스크립트
 - JSON 원본 → 정제 → 원가 계산 JOIN → Parquet 저장
@@ -16,13 +17,13 @@ spark = SparkSession.builder \
 
 spark.sparkContext.setLogLevel("WARN")
 
-HDFS_RAW       = "hdfs:///data/auction/raw/"
-HDFS_PROCESSED = "hdfs:///data/auction/processed/"
-HDFS_RECIPE    = "hdfs:///data/auction/recipe/oreha_recipe.csv"
+HDFS_RAW       = "hdfs:///user/maria_dev/auction/raw/*/*/*.json"
+HDFS_PROCESSED = "hdfs:///user/maria_dev/auction/processed/"
+HDFS_RECIPE    = "hdfs:///user/maria_dev/auction/recipe/oreha_recipe.csv"
 
 # ── 1. 원본 JSON 읽기 ─────────────────────────────────────────────────────────
 print("[1/4] 원본 데이터 로딩...")
-df_raw = spark.read.json(HDFS_RAW)
+df_raw = spark.read.option("multiLine", "true").json(HDFS_RAW)
 
 # ── 2. 정제 ──────────────────────────────────────────────────────────────────
 print("[2/4] 데이터 정제...")
@@ -74,7 +75,7 @@ df_clean.write.mode("overwrite").parquet(HDFS_PROCESSED + "auction_log/")
 df_profit.write.mode("overwrite").parquet(HDFS_PROCESSED + "craft_profit/")
 
 print("[완료] 전처리 완료")
-print(f"  auction_log: {df_clean.count()}건")
-print(f"  craft_profit: {df_profit.count()}건")
+print("  auction_log: {}건".format(df_clean.count()))
+print("  craft_profit: {}건".format(df_profit.count()))
 
 spark.stop()
