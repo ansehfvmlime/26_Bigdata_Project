@@ -51,7 +51,7 @@ df_material = df_clean.filter(F.col("category").isin(
 
 # 레시피 JOIN → 수집 시점 × route별 원가 계산
 df_cost = df_recipe.join(df_material, on="material_name", how="inner") \
-    .withColumn("material_cost", F.col("material_price") * F.col("quantity"))
+    .withColumn("material_cost", (F.col("material_price") / 100) * F.col("quantity"))
 
 # route별 원가 합산 → 개당 원가 계산
 df_route_cost = df_cost.groupBy(
