@@ -42,7 +42,8 @@ df_recipe = spark.read \
     .csv(HDFS_RECIPE)
 
 # 재료별 가격 추출 (생활재료만)
-df_material = df_clean.filter(F.col("category") == "생활재료") \
+df_material = df_clean.filter(F.col("category").isin(
+    ["식물채집", "벌목", "채광", "수렵", "낚시", "고고학"])) \
     .select("collected_at", "item_name", "price") \
     .withColumnRenamed("item_name", "material_name") \
     .withColumnRenamed("price", "material_price")
@@ -58,7 +59,12 @@ df_craft_cost = df_cost.groupBy("result_item", "collected_at") \
     )
 
 # 오레하 경매장가 추출
-df_oreha = df_clean.filter(F.col("category") == "오레하") \
+df_oreha = df_clean.filter(
+    (F.col("category") == "재련재료") &
+    (F.col("item_name").isin([
+        "오레하 융화 재료", "상급 오레하 융화 재료", "최상급 오레하 융화 재료",
+        "아비도스 융화 재료", "상급 아비도스 융화 재료"
+    ]))) \
     .select("collected_at", "item_name", "price") \
     .withColumnRenamed("item_name", "result_item") \
     .withColumnRenamed("price", "market_price")
