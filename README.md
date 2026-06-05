@@ -42,6 +42,9 @@ Hadoop 기반 빅데이터 파이프라인(HDFS → Spark → Hive)으로 처리
 | 분석        | Apache Hive (HiveQL) + PySpark — 집계, 상관분석, 이상치 탐지    |
 | 시각화      | Matplotlib 기반 정적 그래프 및 분석 결과 텍스트 산출물          |
 
+본 프로젝트의 핵심 빅데이터 컴포넌트는 `HDFS + Spark + Hive`이다.
+`HDFS`는 원본/전처리 데이터 저장, `Spark`는 정제·JOIN·통계 분석, `Hive`는 외부 테이블 관리와 집계 쿼리 수행에 사용하였다.
+
 ---
 
 ## 데이터 현황
@@ -177,6 +180,7 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 spark-submit \
 ```
 
 `collect.py --schedule` 모드는 내부적으로 2시간 간격 반복 수집용이며, 실제 운영 자동화는 위 cron 설정 기준으로 수행한다.
+또한 `run_pipeline.sh`를 통해 데이터 수집부터 HDFS 적재, Hive 테이블 생성, Spark 전처리, 분석 실행, 결과 산출까지 전체 파이프라인을 일괄 자동 실행할 수 있다.
 
 ---
 
