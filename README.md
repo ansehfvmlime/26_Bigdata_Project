@@ -40,7 +40,7 @@ Hadoop 기반 빅데이터 파이프라인(HDFS → Spark → Hive)으로 처리
 | 분산 저장   | HDFS (HDP Sandbox on GCP)                                       |
 | 전처리      | Apache Spark (PySpark) — DataFrame 정제, 레시피 JOIN, 원가 계산 |
 | 분석        | Apache Hive (HiveQL) + PySpark — 집계, 상관분석, 이상치 탐지    |
-| 시각화      | 인터랙티브 대시보드 (Chart.js 기반, 항목별 on/off 토글)         |
+| 시각화      | Matplotlib 기반 정적 그래프 및 분석 결과 텍스트 산출물          |
 
 ---
 
@@ -50,7 +50,7 @@ Hadoop 기반 빅데이터 파이프라인(HDFS → Spark → Hive)으로 처리
 - 수집 주기: 7분 간격 (cron 자동화) / collect.py 직접 실행 시 1회 수집
 - 수집 카테고리: 식물채집, 벌목, 채광, 수렵, 낚시, 고고학, 재련재료, 재련추가, 유물각인서, 젬 (10종)
 - 처리된 레코드: auction_log 417,082건 / craft_profit 23,887건 (Parquet) - 2026/06/05 기준
-- HDFS 누적 용량: 86.7MB (마감까지 ~100MB 달성 예정)
+- HDFS 누적 용량: 86.7MB (2026/06/05 기준, 마감 전 100MB 이상 확보 예정)
 
 ---
 
@@ -155,9 +155,7 @@ spark-submit \
 hive -f src/analyze/q1_daily_trend.sql
 
 # Q2: 제작 이득 분석 (Hive)
-spark-submit \
-  --conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=/bin/python3.6 \
-  hive -f src/analyze/q2_craft_profit.sql
+hive -f src/analyze/q2_craft_profit.sql
 
 # Q3: 요일-가격 상관관계 (Spark)
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 spark-submit \
@@ -177,6 +175,8 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 spark-submit \
 */7 * * * * cd /home/maria_dev/26_Bigdata_Project && LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LOSTARK_API_KEY="키" python3.6 src/ingest/collect.py >> /home/maria_dev/collect.log 2>&1
 */9 * * * * cd /home/maria_dev/26_Bigdata_Project && bash src/pipeline/upload_hdfs.sh >> /home/maria_dev/upload.log 2>&1
 ```
+
+`collect.py --schedule` 모드는 내부적으로 2시간 간격 반복 수집용이며, 실제 운영 자동화는 위 cron 설정 기준으로 수행한다.
 
 ---
 

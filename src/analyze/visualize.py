@@ -27,15 +27,46 @@ import numpy as np
 def set_korean_font():
     font_candidates = [
         '/usr/share/fonts/truetype/nanum/NanumGothic.ttf',
+        '/usr/share/fonts/truetype/nanum/NanumBarunGothic.ttf',
         '/usr/share/fonts/nanum/NanumGothic.ttf',
-        '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',
+        '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+        '/usr/share/fonts/opentype/noto/NotoSansCJKkr-Regular.otf',
+        '/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc',
     ]
+    font_keywords = [
+        'NanumGothic',
+        'NanumBarunGothic',
+        'Noto Sans CJK KR',
+        'Noto Sans KR',
+        'Malgun Gothic',
+        'AppleGothic',
+    ]
+
+    selected_font = None
+
     for font_path in font_candidates:
         if os.path.exists(font_path):
-            font_prop = fm.FontProperties(fname=font_path)
-            plt.rcParams['font.family'] = font_prop.get_name()
+            selected_font = fm.FontProperties(fname=font_path).get_name()
             break
+
+    if selected_font is None:
+        for font_path in fm.findSystemFonts():
+            try:
+                font_name = fm.FontProperties(fname=font_path).get_name()
+            except Exception:
+                continue
+            if any(keyword in font_name for keyword in font_keywords):
+                selected_font = font_name
+                break
+
+    if selected_font is None:
+        print("[경고] 사용 가능한 한글 폰트를 찾지 못했습니다. 그래프 한글이 깨질 수 있습니다.")
+        selected_font = 'DejaVu Sans'
+
+    plt.rcParams['font.family'] = selected_font
+    plt.rcParams['font.sans-serif'] = [selected_font, 'DejaVu Sans']
     plt.rcParams['axes.unicode_minus'] = False
+    print("[INFO] 시각화 폰트:", selected_font)
 
 set_korean_font()
 
