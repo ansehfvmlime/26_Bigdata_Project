@@ -17,7 +17,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS auction_log (
     hour_of_day   INT
 )
 STORED AS PARQUET
-LOCATION 'hdfs:///data/auction/processed/auction_log/';
+LOCATION 'hdfs:///user/maria_dev/auction/processed/auction_log/';
 
 -- 제작 이득 테이블 (Spark preprocess.py 결과)
 CREATE EXTERNAL TABLE IF NOT EXISTS craft_profit (
@@ -27,10 +27,11 @@ CREATE EXTERNAL TABLE IF NOT EXISTS craft_profit (
     craft_cost    BIGINT,
     profit        BIGINT,
     is_profitable BOOLEAN,
+    route         STRING,
     day_of_week   INT
 )
 STORED AS PARQUET
-LOCATION 'hdfs:///data/auction/processed/craft_profit/';
+LOCATION 'hdfs:///user/maria_dev/auction/processed/craft_profit/';
 
 -- 레시피 테이블 (CSV)
 CREATE EXTERNAL TABLE IF NOT EXISTS oreha_recipe (
@@ -42,5 +43,5 @@ CREATE EXTERNAL TABLE IF NOT EXISTS oreha_recipe (
 ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
-LOCATION 'hdfs:///data/auction/recipe/'
+LOCATION 'hdfs:///user/maria_dev/auction/recipe/';
 TBLPROPERTIES ('skip.header.line.count'='1');

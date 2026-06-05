@@ -47,7 +47,7 @@ Hadoop 기반 빅데이터 파이프라인(HDFS → Spark → Hive)으로 처리
 ## 데이터 현황
 
 - 수집 기간: 2026-05-20 ~ (자동 수집 진행 중)
-- 수집 주기: 7분 간격 (cron)
+- 수집 주기: 7분 간격 (cron 자동화) / collect.py 직접 실행 시 1회 수집
 - 수집 카테고리: 식물채집, 벌목, 채광, 수렵, 낚시, 고고학, 재련재료, 재련추가, 유물각인서, 젬 (10종)
 - 처리된 레코드: auction_log 417,082건 / craft_profit 23,887건 (Parquet) - 2026/06/05 기준
 - HDFS 누적 용량: 86.7MB (마감까지 ~100MB 달성 예정)
@@ -154,10 +154,10 @@ spark-submit \
 # Q1: 요일별 시세 패턴 (Hive)
 hive -f src/analyze/q1_daily_trend.sql
 
-# Q2: 제작 이득 분석 (Spark)
+# Q2: 제작 이득 분석 (Hive)
 spark-submit \
   --conf spark.yarn.appMasterEnv.PYSPARK_PYTHON=/bin/python3.6 \
-  src/analyze/q3_correlation.py
+  hive -f src/analyze/q2_craft_profit.sql
 
 # Q3: 요일-가격 상관관계 (Spark)
 LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 spark-submit \
