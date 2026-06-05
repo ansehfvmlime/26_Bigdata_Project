@@ -14,7 +14,11 @@ spark.sparkContext.setLogLevel("WARN")
 
 HDFS_PROCESSED = "hdfs:///user/maria_dev/auction/processed/auction_log/"
 TARGET_CATEGORIES = ["재련재료", "재련추가"]
-OUTPUT_FILE = "/home/maria_dev/q3_result.txt"
+OUTPUT_DIR = "results"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "q3_result.txt")
+
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
 
 df = spark.read.parquet(HDFS_PROCESSED) \
     .filter(F.col("category").isin(TARGET_CATEGORIES)) \

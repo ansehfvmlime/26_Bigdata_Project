@@ -22,7 +22,7 @@ fi
 # 1. 데이터 수집
 echo ""
 echo "[1/5] 데이터 수집..."
-python src/ingest/collect.py
+python3.6 src/ingest/collect.py
 
 # 2. HDFS 적재
 echo ""
@@ -48,7 +48,7 @@ hive -f src/analyze/q1_daily_trend.sql
 hive -f src/analyze/q2_craft_profit.sql
 spark-submit src/analyze/q3_correlation.py
 spark-submit src/analyze/q4_anomaly.py
-python src/analyze/visualize.py
+python3.6 src/analyze/visualize.py
 
 echo ""
 echo "========================================"

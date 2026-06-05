@@ -22,6 +22,6 @@ SELECT
     MAX(price)            AS max_price,
     COUNT(*)              AS record_count
 FROM auction_log
-WHERE category IN ('유물각인서', '오레하', '재련재료', '재련추가')
+WHERE category IN ('유물각인서', '재련재료', '재련추가')
 GROUP BY category, item_name, day_of_week
 ORDER BY category, item_name, day_of_week;

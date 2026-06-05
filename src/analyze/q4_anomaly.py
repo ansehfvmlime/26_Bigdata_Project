@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function, unicode_literals
 import codecs
+import os
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 
@@ -12,7 +13,11 @@ spark = SparkSession.builder \
 spark.sparkContext.setLogLevel("WARN")
 
 HDFS_PROCESSED = "hdfs:///user/maria_dev/auction/processed/auction_log/"
-OUTPUT_FILE = "/home/maria_dev/q4_result.txt"
+OUTPUT_DIR = "results"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "q4_result.txt")
+
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
 
 df = spark.read.parquet(HDFS_PROCESSED) \
     .filter(F.col("category") == "유물각인서")
