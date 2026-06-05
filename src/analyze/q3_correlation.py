@@ -17,7 +17,7 @@ spark.sparkContext.setLogLevel("WARN")
 
 HDFS_PROCESSED = "hdfs:///user/maria_dev/auction/processed/auction_log/"
 
-TARGET_CATEGORIES = ["재련재료", "재련추가", "오레하"]
+TARGET_CATEGORIES = ["재련재료", "재련추가"]
 
 # 대상 카테고리 데이터 로드
 df = spark.read.parquet(HDFS_PROCESSED) \
