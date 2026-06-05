@@ -32,8 +32,8 @@ bash src/pipeline/upload_hdfs.sh
 # 3. Hive 테이블 초기화 (최초 1회)
 echo ""
 echo "[3/5] Hive 테이블 및 레시피 적재..."
-hdfs dfs -mkdir -p /data/auction/recipe
-hdfs dfs -put -f data/recipe/oreha_recipe.csv /data/auction/recipe/
+hdfs dfs -mkdir -p /user/maria_dev/auction/recipe
+hdfs dfs -put -f data/recipe/oreha_recipe.csv /user/maria_dev/auction/recipe/
 hive -f infra/hive_schema.sql
 
 # 4. Spark 전처리
