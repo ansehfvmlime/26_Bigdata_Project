@@ -59,31 +59,44 @@ Hadoop 기반 빅데이터 파이프라인(HDFS → Spark → Hive)으로 처리
 
 ## Repository 구조
 
+```text
 26_Bigdata_Project/
 ├── README.md
-├── data/
-│ ├── raw
-│ ├── recipe/
-│ │ └── oreha_recipe.csv # 오레하/아비도스 제작 레시피 (route, result_quantity 포함)
-│ └── README.md # 아에템에 관한 간단한 설명
-├── src/
-│ ├── ingest/
-│ │ ├── data
-│ │ └── collect.py # OpenAPI 수집 스크립트 (429 오류 재시도 포함)
-│ ├── pipeline/
-│ │ ├── upload_hdfs.sh # HDFS 적재 스크립트
-│ │ └── preprocess.py # Spark 전처리 (정제 + route별 최저 원가 계산)
-│ └── analyze/
-│ ├── q1_daily_trend.sql # Q1: 요일별 시세 분석 (HiveQL)
-│ ├── q2_craft_profit.sql # Q2: 제작 이득 분석 (HiveQL)
-│ ├── q3_correlation.py # Q3: 요일-가격 상관계수 분석 (PySpark)
-│ ├── q4_anomaly.py # Q4: 유물각인서 이상치 탐지 (PySpark)
-│ └── visualize.py
-├── run_pipeline.sh
-├── .env
 ├── .env.example
-└── infra/
-└── hive_schema.sql # Hive 외부 테이블 DDL
+├── run_pipeline.sh                # 전체 파이프라인 자동 실행 스크립트
+├── data/
+│   ├── README.md                  # 데이터 설명 및 스키마
+│   └── recipe/
+│       └── oreha_recipe.csv       # 제작 레시피 CSV
+├── infra/
+│   └── hive_schema.sql            # Hive 외부 테이블 DDL
+├── results/
+│   ├── q1_daily_trend.png
+│   ├── q1_result.txt
+│   ├── q2_craft_profit.png
+│   ├── q2_result.txt
+│   ├── q3_correlation.png
+│   ├── q3_result.txt
+│   ├── q4_anomaly.png
+│   └── q4_result.txt
+└── src/
+    ├── analyze/
+    │   ├── q1_daily_trend.sql     # Q1: 요일별 시세 분석
+    │   ├── q2_craft_profit.sql    # Q2: 제작 이득 분석
+    │   ├── q3_correlation.py      # Q3: 상관관계 분석
+    │   ├── q4_anomaly.py          # Q4: 이상치 탐지
+    │   └── visualize.py           # 결과 그래프 생성
+    ├── ingest/
+    │   ├── collect.py             # OpenAPI 수집 스크립트
+    │   └── data/
+    │       └── raw/
+    │           └── 2026-05-19/
+    │               └── 15/
+    │                   └── auction_20260519_153824.json  # 샘플 raw 데이터
+    └── pipeline/
+        ├── preprocess.py          # Spark 전처리 및 Parquet 저장
+        └── upload_hdfs.sh         # HDFS 적재 스크립트
+```
 
 ---
 
