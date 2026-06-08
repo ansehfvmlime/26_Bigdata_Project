@@ -115,40 +115,8 @@ def plot_q1():
     print("  [완료] Q1 저장: " + path)
 
 
-# ── Q2: 요일별 제작 이득률 막대 그래프 ───────────────────────────────────────
+# ── Q2: 아비도스 계열 요일별 제작 이득 (골드) ─────────────────────────────────
 def plot_q2():
-    items = {
-        u'아비도스 융화 재료':    [93.1, 90.6, 88.1, 94.8, 98.1, 94.9, 95.9],
-        u'상급 아비도스 융화 재료': [87.4, 84.9, 93.7, 84.0, 78.0, 75.0, 89.9],
-        u'오레하 융화 재료':      [71.3, 55.9, 45.5, 66.2, 76.2, 69.0, 78.6],
-        u'상급 오레하 융화 재료':  [50.0, 50.0, 55.2, 64.3, 75.3, 62.4, 50.0],
-        u'최상급 오레하 융화 재료': [99.7, 69.4, 76.2, 62.0, 42.5, 80.1, 95.8],
-    }
-    colors = ['#0F6E56', '#1D9E75', '#185FA5', '#378ADD', '#854F0B']
-
-    x = np.arange(len(DAYS))
-    width = 0.15
-    n = len(items)
-    offsets = np.linspace(-(n-1)/2, (n-1)/2, n) * width
-
-    fig, ax = plt.subplots(figsize=(13, 6))
-
-    for (name, values), color, offset in zip(items.items(), colors, offsets):
-        bars = ax.bar(x + offset, values, width, label=name,
-                      color=color, alpha=0.85, edgecolor='white', linewidth=0.5)
-
-    ax.axhline(y=50, color='gray', linestyle='--', alpha=0.5, linewidth=1)
-    ax.text(6.6, 51.5, u'50% 기준선', color='gray', fontsize=8)
-
-    ax.set_title(u'Q2. 요일별 제작 이득률 (profitable_pct %)', fontsize=14, pad=15)
-    ax.set_xlabel(u'요일', fontsize=11)
-    ax.set_ylabel(u'이득 확률 (%)', fontsize=11)
-    ax.set_xticks(x)
-    ax.set_xticklabels(DAYS)
-    ax.set_ylim(0, 115)
-    ax.legend(loc='upper right', fontsize=9, ncol=2)
-    ax.grid(True, axis='y', alpha=0.3)
-    ax.set_facecolor('#FAFAFA')def plot_q2():
     # 요일별 평균 이득 골드 (market_price - craft_cost 평균)
     items = {
         u'아비도스 융화 재료':      [21, 20, 20, 19, 20, 19, 20],
@@ -201,8 +169,7 @@ def plot_q2():
     plt.savefig(path, dpi=150, bbox_inches='tight')
     plt.close()
     print("  [완료] Q2 저장: " + path)
-
-
+    
 # ── Q3: 요일-가격 상관계수 수평 막대 그래프 ──────────────────────────────────
 def plot_q3():
     items = [
