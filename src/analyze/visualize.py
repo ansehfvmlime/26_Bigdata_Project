@@ -148,6 +148,51 @@ def plot_q2():
     ax.set_ylim(0, 115)
     ax.legend(loc='upper right', fontsize=9, ncol=2)
     ax.grid(True, axis='y', alpha=0.3)
+    ax.set_facecolor('#FAFAFA')def plot_q2():
+    # 요일별 평균 이득 골드 (market_price - craft_cost 평균)
+    items = {
+        u'아비도스 융화 재료':      [21, 20, 20, 19, 20, 19, 20],
+        u'상급 아비도스 융화 재료': [5,  3,  4,  2,  2,  2,  4],
+    }
+    colors = ['#0F6E56', '#185FA5']
+
+    x = np.arange(len(DAYS))
+    width = 0.35
+
+    fig, ax = plt.subplots(figsize=(11, 6))
+
+    for i, (name, values) in enumerate(items.items()):
+        offset = (i - 0.5) * width
+        bars = ax.bar(x + offset, values, width,
+                      label=name, color=colors[i],
+                      alpha=0.85, edgecolor='white', linewidth=0.5)
+        for bar, v in zip(bars, values):
+            ax.text(bar.get_x() + bar.get_width()/2,
+                    bar.get_height() + 0.2,
+                    u'{}G'.format(v),
+                    ha='center', va='bottom', fontsize=9,
+                    color=colors[i], fontweight='bold')
+
+    # 수요일 강조
+    ax.axvspan(2.5, 3.5, alpha=0.06, color='red')
+    ax.text(3.0, 23.5, u'수(초기화)', ha='center', fontsize=8,
+            color='red', alpha=0.7)
+
+    # 목요일 최고 강조
+    ax.annotate(u'목요일 최고\n(98.1% 이득)',
+                xy=(4 - 0.5*width, 20),
+                xytext=(4.6, 22),
+                fontsize=8, color='#0F6E56',
+                arrowprops=dict(arrowstyle='->', color='#0F6E56', lw=1.2))
+
+    ax.set_title(u'Q2. 아비도스 계열 요일별 평균 제작 이득 (골드/개)', fontsize=14, pad=15)
+    ax.set_xlabel(u'요일', fontsize=11)
+    ax.set_ylabel(u'평균 이득 (골드/개)', fontsize=11)
+    ax.set_xticks(x)
+    ax.set_xticklabels(DAYS)
+    ax.set_ylim(0, 27)
+    ax.legend(loc='upper right', fontsize=10)
+    ax.grid(True, axis='y', alpha=0.3)
     ax.set_facecolor('#FAFAFA')
     fig.patch.set_facecolor('white')
 
