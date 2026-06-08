@@ -146,13 +146,6 @@ def plot_q2():
     ax.text(3.0, 23.5, u'수(초기화)', ha='center', fontsize=8,
             color='red', alpha=0.7)
 
-    # 목요일 최고 강조
-    ax.annotate(u'목요일 최고\n(98.1% 이득)',
-                xy=(4 - 0.5*width, 20),
-                xytext=(4.6, 22),
-                fontsize=8, color='#0F6E56',
-                arrowprops=dict(arrowstyle='->', color='#0F6E56', lw=1.2))
-
     ax.set_title(u'Q2. 아비도스 계열 요일별 평균 제작 이득 (골드/개)', fontsize=14, pad=15)
     ax.set_xlabel(u'요일', fontsize=11)
     ax.set_ylabel(u'평균 이득 (골드/개)', fontsize=11)
